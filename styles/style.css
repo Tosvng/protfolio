@@ -1,0 +1,64 @@
+html {
+  scroll-behavior: smooth;
+}
+#navbar-example2 {
+  border-bottom: 1px goldenrod solid;
+}
+.nav-item-style {
+  /* font-size: 2rem; */
+  color: gold;
+}
+.heading {
+  min-height: 100vh;
+  height: fit-content;
+  margin-top: 1rem;
+}
+
+.name {
+  font-size: 4rem;
+  margin-top: 10rem;
+}
+.job-title {
+  font-size: 1rem;
+  color: gold;
+  margin-bottom: 5rem;
+}
+#Home p {
+  margin-bottom: 3rem;
+}
+.contact-me-div {
+  margin-top: 10rem;
+
+  /* margin-bottom: auto; */
+}
+.contact-button {
+  background: gold;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 200px;
+}
+
+.edu {
+  height: fit-content;
+  border-bottom: 1px goldenrod solid;
+  font-size: 3rem;
+}
+.edu-content {
+  margin: 0px auto;
+  padding: 50px 0px 50px 0px;
+  border-bottom: 1px ridge gold;
+  min-height: 300px;
+}
+
+.subtext {
+  font-size: smaller;
+  color: gold;
+}
+body {
+  background-color: black;
+  position: relative;
+  color: aliceblue;
+  padding-top: 60px;
+  /* overflow-y: scroll; */
+}
