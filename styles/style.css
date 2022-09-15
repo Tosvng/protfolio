@@ -34,6 +34,7 @@ html {
 .input {
   border: 1px solid gold;
   font-size: 1rem;
+  background: aliceblue;
 }
 .contact-button {
   background: gold;
