@@ -60,6 +60,27 @@ html {
   font-size: smaller;
   color: gold;
 }
+.project-tags {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.project-tags p {
+  background: gold;
+  color: black;
+  font-size: large;
+  font-weight: normal;
+  /* border: 2px solid rgb(27, 19, 9); */
+  /* border-radius: 50px; */
+  /* padding: 10px 10px; */
+}
+.project-tags p:hover {
+  transition: 0.1s ease-in;
+  background: black;
+  color: gold;
+  border-color: gold;
+}
 body {
   background-color: black;
   position: relative;
