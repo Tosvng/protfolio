@@ -1,6 +1,12 @@
 html {
   scroll-behavior: smooth;
 }
+p,
+ul {
+  font-size: 18px;
+  line-height: 30px;
+}
+
 #navbar-example2 {
   border-bottom: 1px goldenrod solid;
 }
@@ -30,7 +36,10 @@ html {
   margin-bottom: 3rem;
 }
 .contact-me-div {
-  margin-top: 10rem;
+  margin-top: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 
   /* margin-bottom: auto; */
 }
@@ -92,5 +101,14 @@ body {
   /* overflow-y: scroll; */
 }
 img {
-  height: 250px;
+  height: 480px;
+  object-fit: fill;
+}
+.carousel-div {
+  width: 320px;
+}
+@media screen and (min-width: 900px) {
+  .carousel-div {
+    width: 480px;
+  }
 }
