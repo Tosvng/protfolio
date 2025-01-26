@@ -20,7 +20,7 @@ interface FormData {
 }
 
 const INITIAL_FORM_STATE: FormData = {
-  from_name: "",
+  name: "",
   email: "",
   message: "",
 };
@@ -32,10 +32,12 @@ const ContactForm = () => {
     show: boolean;
     message: string;
     severity: "success" | "error";
+    error: string | null;
   }>({
     show: false,
     message: "",
     severity: "success",
+    error: null,
   });
   const formRef = useRef<HTMLFormElement>(null);
   const theme = useTheme();
@@ -69,6 +71,7 @@ const ContactForm = () => {
         show: true,
         message: "Message sent successfully!",
         severity: "success",
+        error: null,
       });
       setFormData(INITIAL_FORM_STATE);
     } catch (error) {
@@ -76,6 +79,7 @@ const ContactForm = () => {
         show: true,
         message: "Failed to send message. Please try again.",
         severity: "error",
+        error: error as string | null,
       });
     } finally {
       setIsSubmitting(false);
@@ -100,8 +104,8 @@ const ContactForm = () => {
           <TextField
             fullWidth
             label="Name"
-            name="from_name"
-            value={formData.from_name}
+            name="name"
+            value={formData.name}
             onChange={handleChange}
             required
             variant="outlined"

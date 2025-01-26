@@ -1,9 +1,9 @@
 import { Box, Typography, Grid, Paper, Stack } from "@mui/material";
 import { motion } from "framer-motion";
 import { useTheme } from "@mui/material/styles";
-import SchoolIcon from "@mui/icons-material/School";
-import DateRangeIcon from "@mui/icons-material/DateRange";
-import GradeIcon from "@mui/icons-material/Grade";
+// import SchoolIcon from "@mui/icons-material/School";
+// import DateRangeIcon from "@mui/icons-material/DateRange";
+// import GradeIcon from "@mui/icons-material/Grade";
 
 interface Education {
   school: string;

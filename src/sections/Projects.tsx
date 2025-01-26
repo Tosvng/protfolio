@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "../data/projects";
 import ProjectFilters from "../components/ProjectFilters";
 import { useTheme } from "@mui/material/styles";
+import { Technology } from "../types/project";
 
 const Projects = () => {
   const [filter, setFilter] = useState<string>("all");
@@ -15,7 +16,10 @@ const Projects = () => {
   // Get all unique technologies from all projects
   const allTechnologies = useMemo(
     () =>
-      projects.reduce((acc, project) => [...acc, ...project.technologies], []),
+      projects.reduce<Technology[]>(
+        (acc, project) => [...acc, ...project.technologies],
+        []
+      ),
     []
   );
 

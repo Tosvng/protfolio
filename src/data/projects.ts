@@ -24,10 +24,10 @@ export const projects: Project[] = [
     description:
       "This project is a comprehensive E-Commerce Website Builder and Management Application tailored for entrepreneurs. It empowers users to effortlessly create, manage, and optimize their online stores.",
     images: [
+      { src: shopxHome, alt: "Home Page" },
       { src: shopxAdmin, alt: "Admin Dashboard" },
       { src: shopxOrders, alt: "Admin Orders" },
       { src: shopxContact, alt: "Contact Page" },
-      { src: shopxHome, alt: "Home Page" },
       { src: shopxTopSellers, alt: "Top Sellers" },
     ],
     technologies: [
@@ -56,8 +56,8 @@ export const projects: Project[] = [
     title: "Online Course",
     description: "This web application evaluates learners for an online course",
     images: [
-      { src: courseFront, alt: "Front Page" },
       { src: courseResults, alt: "Results Page" },
+      { src: courseFront, alt: "Front Page" },
       { src: courseExam, alt: "Start Exam Page" },
     ],
     technologies: [{ name: "Python" }, { name: "Django" }],

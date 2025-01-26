@@ -169,7 +169,7 @@ const Navbar = ({ children }: NavbarProps) => {
               onClose={handleClose}
             >
               {navItems
-                .find((item) => item.subItems)
+                .find((item) => item.subItems !== undefined)
                 ?.subItems.map((subItem) => (
                   <MenuItem
                     key={subItem.label}
