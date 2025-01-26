@@ -1,41 +1,38 @@
-import { useState, useMemo, useEffect } from "react";
-import { ThemeProvider, CssBaseline, Container } from "@mui/material";
+import { useEffect } from "react";
+import { initGA, logPageView } from "./utils/analytics";
+import { Box, CssBaseline, ThemeProvider } from "@mui/material";
+import { getTheme } from "./theme/theme";
 import Navbar from "./components/navbar/Navbar";
+import ThemeToggle from "./components/ThemeToggle";
 import Home from "./sections/Home";
 import Experience from "./sections/Experience";
 import Education from "./sections/Education";
 import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
-import { getTheme } from "./theme/theme";
-import ThemeToggle from "./components/ThemeToggle";
-import emailjs from "@emailjs/browser";
+import { useThemeMode } from "./hooks/useThemeMode";
 
 function App() {
-  const [mode, setMode] = useState<"light" | "dark">("dark");
-
-  const theme = useMemo(() => getTheme(mode), [mode]);
-
-  const toggleTheme = () => {
-    setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
-  };
+  const { mode, toggleTheme } = useThemeMode();
+  const theme = getTheme(mode);
 
   useEffect(() => {
-    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY!);
+    initGA();
+    logPageView();
   }, []);
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Navbar>
-        <ThemeToggle toggleTheme={toggleTheme} />
-      </Navbar>
-      <Container maxWidth="lg">
+      <Box>
+        <Navbar>
+          <ThemeToggle mode={mode} toggleTheme={toggleTheme} />
+        </Navbar>
         <Home />
         <Experience />
         <Education />
         <Skills />
         <Projects />
-      </Container>
+      </Box>
     </ThemeProvider>
   );
 }

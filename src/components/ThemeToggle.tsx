@@ -1,20 +1,15 @@
-import { IconButton, useTheme, Tooltip } from "@mui/material";
+import { IconButton, Tooltip } from "@mui/material";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 
 interface ThemeToggleProps {
+  mode: "light" | "dark";
   toggleTheme: () => void;
 }
 
-const ThemeToggle = ({ toggleTheme }: ThemeToggleProps) => {
-  const theme = useTheme();
-
+const ThemeToggle = ({ mode, toggleTheme }: ThemeToggleProps) => {
   return (
-    <Tooltip
-      title={`Switch to ${
-        theme.palette.mode === "dark" ? "light" : "dark"
-      } mode`}
-    >
+    <Tooltip title={`Switch to ${mode === "dark" ? "light" : "dark"} mode`}>
       <IconButton
         onClick={toggleTheme}
         color="inherit"
@@ -25,11 +20,7 @@ const ThemeToggle = ({ toggleTheme }: ThemeToggleProps) => {
           },
         }}
       >
-        {theme.palette.mode === "dark" ? (
-          <Brightness7Icon />
-        ) : (
-          <Brightness4Icon />
-        )}
+        {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
       </IconButton>
     </Tooltip>
   );
